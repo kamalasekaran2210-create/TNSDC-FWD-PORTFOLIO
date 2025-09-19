@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Kamal</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Portfolio</title>
+  <style>
+    /* --- Reset & base --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+    body {
+      font-family: "Arial", sans-serif;
+      color: #333;
+      line-height: 1.5;
+      background: #fafafa;
+    }
+
+    /* --- Header / Navbar --- */
+    header {
+      background: #222;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+    .logo { font-weight: 700; letter-spacing: 0.6px; }
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      align-items: center;
+    }
+    nav a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 8px;
+      transition: color 0.18s;
+    }
+    nav a:hover { color: #fff; }
+
+    /* --- Hero section --- */
+    .hero {
+      min-height: calc(100vh - 64px); /* full viewport minus header */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      /* bright left-to-right gradient like screenshot */
+      background: linear-gradient(90deg, #5bb0ff 0%, #45d6ff 35%, #30f0e8 100%);
+      color: #fff;
+      padding: 80px 20px;
+    }
+    .hero .inner {
+      max-width: 760px;
+    }
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .hero h1 .name {
+      color: #ffd600; /* yellow highlight for name */
+    }
+    .hero p.lead {
+      margin-bottom: 22px;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+    .btn {
+      display: inline-block;
+      background: #ff9a1f;
+      color: #fff;
+      border-radius: 6px;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(255,154,31,0.18);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,0.12); }
+
+    /* --- Page sections --- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    .about {
+      background: #fff;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      padding: 34px;
+      box-shadow: 0 -6px 24px rgba(0,0,0,0.04);
+    }
+    .about h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      color: #222;
+      font-size: 22px;
+    }
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: #444;
+      text-align: center;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width:720px){
+      nav ul { gap: 12px; }
+      .hero h1 { font-size: 20px; }
+      .hero p.lead { font-size: 14px; }
+      .nav-inner { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <div class="logo">My Portfolio</div>
+      <nav>
+        <ul>
+          <li><a href="#about" onclick="scrollToSection('about')">About</a></li>
+          <li><a href="#projects" onclick="scrollToSection('projects')">Projects</a></li>
+          <li><a href="#contact" onclick="scrollToSection('contact')">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero (big gradient area) -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="inner">
+      <h1>Hello, I'm <span class="name">KAMALASEKARAN N</span></h1>
+      <p class="lead">A passionate Web Developer</p>
+      <a class="btn" href="#contact" onclick="scrollToSection('contact')">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container about">
+    <h2>About Me</h2>
+    <p>
+      I'm a web developer who loves making clean, responsive websites and delightful user interfaces.
+      I build with HTML, CSS and JavaScript and enjoy learning new tools and frameworks every day.
+      This portfolio demonstrates a simple, modern layout with a sticky navbar and a full-height hero area.
+    </p>
+  </section>
+
+  <!-- Projects (placeholder) -->
+  <section id="projects" class="container" style="padding-top:20px;">
+    <h2 style="text-align:center;margin-bottom:16px;">Projects</h2>
+    <p style="text-align:center;color:#666;">(Add your project cards or links here.)</p>
+  </section>
+
+  <!-- Contact (simple placeholder) -->
+  <section id="contact" class="container" style="padding-bottom:80px;">
+    <h2 style="text-align:center;margin-bottom:16px;">Contact</h2>
+    <p style="text-align:center;color:#666;margin-bottom:22px;">Want to work together? Send me a message.</p>
+
+    <form id="contactForm" onsubmit="sendMessage(event)" style="max-width:700px;margin:0 auto;">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+        <input name="name" required placeholder="Your name" style="flex:1;padding:10px;border-radius:6px;border:1px solid #ddd;" />
+        <input name="email" type="email" required placeholder="Your email" style="flex:1;padding:10px;border-radius:6px;border:1px solid #ddd;" />
+      </div>
+      <textarea name="message" required placeholder="Message" rows="5" style="width:100%;padding:10px;border-radius:6px;border:1px solid #ddd;margin-bottom:12px;"></textarea>
+      <div style="text-align:center;">
+        <button type="submit" class="btn">Send Message</button>
+      </div>
+      <p id="messageStatus" style="text-align:center;margin-top:12px;color:green;display:none;">✔ Message Sent Successfully!</p>
+    </form>
+  </section>
+
+  <script>
+    // Smooth scroll helper
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Fake contact submit to show status (replace with real API integration)
+    function sendMessage(event){
+      event.preventDefault();
+      const statusEl = document.getElementById('messageStatus');
+      statusEl.style.display = 'none';
+      // Simulate submission latency
+      setTimeout(() => {
+        statusEl.style.display = 'block';
+      }, 400);
+      // if you have a backend, here you would collect form data and send via fetch()
+    }
+  </script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
